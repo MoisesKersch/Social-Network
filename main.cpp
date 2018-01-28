@@ -92,7 +92,7 @@ int main()
     Sleep(2000);
     cout << "\t\tWell since you're here, let's explore "+mysocial.getName()+"'s account" << endl;
     Sleep(2000);
-    cout << "\t\tFirst let's take a look at this friends\n" << endl;
+    cout << "\t\tFirst let's take a look at his friends\n" << endl;
     Sleep(2000);
     mysocial.showMyFriends(mysocial.login(name[5], "root"));
     cout << "\n\t\tMmm.. the only friend he's got is you" << endl;
