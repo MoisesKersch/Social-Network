@@ -6,6 +6,7 @@
 #include "Profile.h"
 #include <vector>
 #include <algorithm>
+#include "windows.h"
 
 using namespace std;
 
@@ -16,7 +17,7 @@ private:
     list<Profile>::iterator it;
     static int counter;
     static int totalAccounts;
-
+    int curIndex;
 public:
     Social();
     Social(string name, string lastname, string birth, string password);
@@ -24,7 +25,10 @@ public:
     int login(string name, string lastname);
     void AddFriend(string name, string lastname, int index);
     void showMyFriends(int index);
-    bool accountExist(string name, string lastname);
+    int accountExist(string name, string lastname);
+    bool isFriend(string name, string lastname, int index);
+    string getName();
+    string getLastName();
 };
 
 #endif // SOCIAL_H
