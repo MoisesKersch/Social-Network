@@ -3,7 +3,7 @@
 
 using namespace std;
 
-int Profile:: id = 1;
+int Profile:: id = 0;
 
 // creating a new account
 Profile::Profile(string firstname, string lastname, string birth, string password)

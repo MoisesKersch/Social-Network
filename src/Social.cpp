@@ -24,8 +24,8 @@ int Social::login(string name, string password)
     {
         if (name == profile[x].front().getFirstName() && password == profile[x].front().getPassword())
         {
-            return profile[x].front().getIndex();
             curIndex = profile[x].front().getIndex();
+            return profile[x].front().getIndex();
         }
     }
     return -1;

@@ -25,7 +25,7 @@
 	"Social.h"
 	<windows.h>
 
-1517158447 source:c:\users\light\documents\social-network\main.cpp
+1517163038 source:c:\users\light\documents\social-network\main.cpp
 	<iostream>
 	<list>
 	"Social.h"
@@ -42,11 +42,11 @@
 1517148262 c:\users\light\documents\social-network\include\profile.h
 	<iostream>
 
-1517148399 source:c:\users\light\documents\social-network\src\profile.cpp
+1517160090 source:c:\users\light\documents\social-network\src\profile.cpp
 	<iostream>
 	"Profile.h"
 
-1517158955 source:c:\users\light\documents\social-network\src\social.cpp
+1517160144 source:c:\users\light\documents\social-network\src\social.cpp
 	<iostream>
 	<stdlib.h>
 	"Profile.h"

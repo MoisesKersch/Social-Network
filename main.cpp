@@ -5,7 +5,7 @@
 
 
 using namespace std;
-string name[] = {"Maria", "Rose", "Airto", "Rodrigo", "Martha", "Roberto", "Rafael", "Ana", "Lana", "Kirk"};
+string name[] = {"", "Rose", "Airto", "Rodrigo", "Martha", "Roberto", "Rafael", "Ana", "Lana", "Kirk"};
 string lastname[] = {"Rupperts", "Almeida", "Oliveira", "Matos", "Huff", "Da Silva", "Santos", "Lima", "Del Rey", "Hemmet"};
 
 Social mysocial;
@@ -14,29 +14,37 @@ void addFriend();
 
 void createAccount()
 {
-    cout << "\t\tSetting up new accounts...\n" << endl;
+    string newname;
+    string newlastname;
+    cout << "\t\tWelcome to my social network, first please help us to create an account for you.\n" << endl;
 
-    for (int x=0; x<10; x++)
+    cout << "Type your full name: ";
+    cin >> newname;
+    cin >> newlastname;
+
+    name[0] = newname;
+    lastname[0] = newlastname;
+    mysocial.createAccount(name[0], lastname[0], "101010", "root");
+    cout << "\n\tCongratulations "+mysocial.getName()+" "+mysocial.getLastName()+", now you make part of this social network!\n" << endl;
+    Sleep(2000);
+    cout << "\t\tMore people are joining this social media, please wait...\n" << endl;
+    for (int x=1; x<10; x++)
     {
-        string a;
-        a = to_string(x);
         cout << "\t" << name[x] << " " << lastname[x] << endl;
-        Sleep(100);
+        Sleep(500);
         mysocial.createAccount(name[x], lastname[x], "101010", "root");
     }
-    cout << "\n\t\tWe're setting an account for you, please wait...\n" << endl;
     Sleep(200);
-    cout << "\tYour Account is: "+name[0]+"  <<<<<\n" << endl;
 }
 
 void loginAccount(string name, string password)
 {
 
-    cout << "\t\tLogin into your account please wait...\n" << endl;
+    cout << "\n\t\tLogin into your account please wait...\n" << endl;
     Sleep(1000);
     if (mysocial.login(name, password) != -1)
     {
-        cout << "\tBem Vindo"<< endl;
+        cout << "\tBem Vindo " << mysocial.getName() << "\n" << endl;
     }
     else cout << "Wrong Acount!" << endl;
     Sleep(200);
@@ -75,11 +83,30 @@ int main()
         cout << "\n\tNo, you're not friend with "+name[8]+" "+lastname[8]+"!" << endl;
     }
 
-    cout << "this account : " << mysocial.getName() << endl;
-    loginAccount(name[2], "root");
-    cout << "this account : " << mysocial.getName() << endl;
+    Sleep(2000);
+    cout << "\n\t\tWait! what are you doing? I don't think you'll be capable to enter another person's account...";
+    Sleep(2000);
+    loginAccount(name[5], "root");
 
-
-
-
+    cout << "\t\tWow, you managed to hack "+mysocial.getName()+"'s account" << endl;
+    Sleep(2000);
+    cout << "\t\tWell since you're here, let's explore "+mysocial.getName()+"'s account" << endl;
+    Sleep(2000);
+    cout << "\t\tFirst let's take a look at this friends\n" << endl;
+    Sleep(2000);
+    mysocial.showMyFriends(mysocial.login(name[5], "root"));
+    cout << "\n\t\tMmm.. the only friend he's got is you" << endl;
+    Sleep(2000);
+    cout << "\n\t\tWell bye bye, see you next time" << endl;
+    Sleep(5000);
 }
+
+
+
+
+
+
+
+
+
+
