@@ -4,13 +4,18 @@
 #include <windows.h>
 
 
+#include <DataBase.h>
+//#include <DataBase.cpp>
+
 using namespace std;
 string name[] = {"", "Rose", "Airto", "Rodrigo", "Martha", "Roberto", "Rafael", "Ana", "Lana", "Kirk"};
 string lastname[] = {"Rupperts", "Almeida", "Oliveira", "Matos", "Huff", "Da Silva", "Santos", "Lima", "Del Rey", "Hemmet"};
 
 Social mysocial;
+DataBase database("localhost", "root", "", "register");
 
 void addFriend();
+
 
 void createAccount()
 {
@@ -24,7 +29,11 @@ void createAccount()
 
     name[0] = newname;
     lastname[0] = newlastname;
+
     mysocial.createAccount(name[0], lastname[0], "101010", "root");
+
+    database.insertInto(name[0], lastname[0], "1000-10-10", "root");
+
     cout << "\n\tCongratulations "+mysocial.getName()+" "+mysocial.getLastName()+", now you make part of this social network!\n" << endl;
     Sleep(2000);
     cout << "\t\tMore people are joining this social media, please wait...\n" << endl;
@@ -33,6 +42,7 @@ void createAccount()
         cout << "\t" << name[x] << " " << lastname[x] << endl;
         Sleep(500);
         mysocial.createAccount(name[x], lastname[x], "101010", "root");
+        database.insertInto(name[x], lastname[x], "1000-10-10", "root");
     }
     Sleep(200);
 }

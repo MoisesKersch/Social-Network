@@ -37,6 +37,7 @@
 		<Unit filename="include/Profile.h" />
 		<Unit filename="include/Social.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/DataBase.cpp" />
 		<Unit filename="src/Profile.cpp" />
 		<Unit filename="src/Social.cpp" />
 		<Extensions>

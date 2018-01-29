@@ -25,11 +25,12 @@
 	"Social.h"
 	<windows.h>
 
-1517163038 source:c:\users\light\documents\social-network\main.cpp
+1517252446 source:c:\users\light\documents\social-network\main.cpp
 	<iostream>
 	<list>
 	"Social.h"
 	<windows.h>
+	<DataBase.h>
 
 1517158905 c:\users\light\documents\social-network\include\social.h
 	<iostream>
@@ -51,4 +52,39 @@
 	<stdlib.h>
 	"Profile.h"
 	"Social.h"
+
+1517250562 c:\users\light\documents\social-network\include\database.h
+	<iostream>
+	<winsock.h>
+	<mysql.h>
+
+1516268961 c:\users\light\documents\social-network\include\mysql.h
+	<sys/types.h>
+	<winsock.h>
+	<winsock.h>
+	"mysql_com.h"
+	"mysql_time.h"
+	"mysql_version.h"
+	"typelib.h"
+	"my_list.h"
+	"my_alloc.h"
+
+1476127546 c:\users\light\documents\social-network\include\mysql_com.h
+
+1476127572 c:\users\light\documents\social-network\include\mysql_time.h
+
+1476127583 c:\users\light\documents\social-network\include\mysql_version.h
+	<custom_conf.h>
+
+1476127723 c:\users\light\documents\social-network\include\typelib.h
+
+1476127768 c:\users\light\documents\social-network\include\my_list.h
+
+1476127777 c:\users\light\documents\social-network\include\my_alloc.h
+
+1517251511 source:c:\users\light\documents\social-network\src\database.cpp
+	"DataBase.h"
+	<iostream>
+	<winsock.h>
+	"mysql.h"
 
