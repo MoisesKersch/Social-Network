@@ -109,7 +109,17 @@ int main()
     cout << "\n\t\tMmm.. the only friend he's got is you" << endl;
     Sleep(2000);
     cout << "\n\t\tWell bye bye, see you next time" << endl;
-    Sleep(5000);
+    Sleep(3000);
+    cout << "\n\t\tLet's add a few friends to this profile...." << endl;
+    Sleep(3000);
+    for (int x=6; x<10; x++)
+    {
+       mysocial.AddFriend(name[x], lastname[x], mysocial.login(name[5], "root"));
+    }
+
+    cout << "\n\t\tLet's see "+mysocial.getName()+"'s new friends..." << endl;
+    mysocial.showMyFriends(mysocial.login(name[5], "root"));
+    Sleep(3000);
 }
 
 
