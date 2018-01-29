@@ -3,11 +3,13 @@
 #include "Social.h"
 #include <windows.h>
 
+#include <DataBase.h> // if you get some error, you can comment this line, it means you're database mysql isn't properly configured in your machine.
 
-#include <DataBase.h>
-//#include <DataBase.cpp>
+// built by Moises Kerschner
+// if you're in code blocks go to setting >> compiler >> Liker settings >> Add >> go to \Social-Network\lib\ and include "libmysql.a".
 
 using namespace std;
+
 string name[] = {"", "Rose", "Airto", "Rodrigo", "Martha", "Roberto", "Rafael", "Ana", "Lana", "Kirk"};
 string lastname[] = {"Rupperts", "Almeida", "Oliveira", "Matos", "Huff", "Da Silva", "Santos", "Lima", "Del Rey", "Hemmet"};
 
@@ -73,7 +75,6 @@ void addFriend()
 
 int main()
 {
-
     createAccount();
     loginAccount(name[0], "root");
     addFriend();

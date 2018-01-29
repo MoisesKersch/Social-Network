@@ -25,14 +25,14 @@
 	"Social.h"
 	<windows.h>
 
-1517252446 source:c:\users\light\documents\social-network\main.cpp
+1517262581 source:c:\users\light\documents\social-network\main.cpp
 	<iostream>
 	<list>
 	"Social.h"
 	<windows.h>
 	<DataBase.h>
 
-1517158905 c:\users\light\documents\social-network\include\social.h
+1517261818 c:\users\light\documents\social-network\include\social.h
 	<iostream>
 	<list>
 	"Profile.h"
@@ -47,7 +47,7 @@
 	<iostream>
 	"Profile.h"
 
-1517160144 source:c:\users\light\documents\social-network\src\social.cpp
+1517262272 source:c:\users\light\documents\social-network\src\social.cpp
 	<iostream>
 	<stdlib.h>
 	"Profile.h"
@@ -82,7 +82,7 @@
 
 1476127777 c:\users\light\documents\social-network\include\my_alloc.h
 
-1517251511 source:c:\users\light\documents\social-network\src\database.cpp
+1517261273 source:c:\users\light\documents\social-network\src\database.cpp
 	"DataBase.h"
 	<iostream>
 	<winsock.h>
