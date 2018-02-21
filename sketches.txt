@@ -1,0 +1,24 @@
+adding friend code
+
+profileVector.at("Static Number").push_back(Profile("first", "lastname", "birth", "password"));
+
+displaying all accounts (Global)
+
+profileVector.at("Vector Position").front().getFirstName();
+
+cout << (*x).front().getFirstName() << endl;
+
+
+ x = profileVector.begin();
+
+    (*x).push_back(Profile("joseph", "third"));
+    (*x).push_back(Profile("cool", "third"));
+    (*x).push_back(Profile("dog", "third"));
+
+    it = (*x).begin();
+
+    for (auto& it: (*x))
+    cout << (it).getFirstName();
+
+
+  

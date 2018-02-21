@@ -25,14 +25,14 @@
 	"Social.h"
 	<windows.h>
 
-1517267066 source:c:\users\light\documents\social-network\main.cpp
+1519199878 source:c:\users\light\documents\social-network\main.cpp
 	<iostream>
 	<list>
 	"Social.h"
 	<windows.h>
 	<DataBase.h>
 
-1517261818 c:\users\light\documents\social-network\include\social.h
+1519199200 c:\users\light\documents\social-network\include\social.h
 	<iostream>
 	<list>
 	"Profile.h"
@@ -40,25 +40,25 @@
 	<algorithm>
 	"windows.h"
 
-1517148262 c:\users\light\documents\social-network\include\profile.h
+1517144662 c:\users\light\documents\social-network\include\profile.h
 	<iostream>
 
-1517160090 source:c:\users\light\documents\social-network\src\profile.cpp
+1517156490 source:c:\users\light\documents\social-network\src\profile.cpp
 	<iostream>
 	"Profile.h"
 
-1517262272 source:c:\users\light\documents\social-network\src\social.cpp
+1519200622 source:c:\users\light\documents\social-network\src\social.cpp
 	<iostream>
 	<stdlib.h>
 	"Profile.h"
 	"Social.h"
 
-1517250562 c:\users\light\documents\social-network\include\database.h
+1517246962 c:\users\light\documents\social-network\include\database.h
 	<iostream>
 	<winsock.h>
 	<mysql.h>
 
-1516268961 c:\users\light\documents\social-network\include\mysql.h
+1516265361 c:\users\light\documents\social-network\include\mysql.h
 	<sys/types.h>
 	<winsock.h>
 	<winsock.h>
@@ -69,20 +69,20 @@
 	"my_list.h"
 	"my_alloc.h"
 
-1476127546 c:\users\light\documents\social-network\include\mysql_com.h
+1476123946 c:\users\light\documents\social-network\include\mysql_com.h
 
-1476127572 c:\users\light\documents\social-network\include\mysql_time.h
+1476123972 c:\users\light\documents\social-network\include\mysql_time.h
 
-1476127583 c:\users\light\documents\social-network\include\mysql_version.h
+1476123983 c:\users\light\documents\social-network\include\mysql_version.h
 	<custom_conf.h>
 
-1476127723 c:\users\light\documents\social-network\include\typelib.h
+1476124123 c:\users\light\documents\social-network\include\typelib.h
 
-1476127768 c:\users\light\documents\social-network\include\my_list.h
+1476124168 c:\users\light\documents\social-network\include\my_list.h
 
-1476127777 c:\users\light\documents\social-network\include\my_alloc.h
+1476124177 c:\users\light\documents\social-network\include\my_alloc.h
 
-1517261273 source:c:\users\light\documents\social-network\src\database.cpp
+1519195155 source:c:\users\light\documents\social-network\src\database.cpp
 	"DataBase.h"
 	<iostream>
 	<winsock.h>

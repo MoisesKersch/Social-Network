@@ -13,83 +13,58 @@ Social::Social(){}
 
 void Social::createAccount(string name, string lastname, string birth, string password)
 {
-    profile[counter].push_back(Profile(name, lastname, birth, password));
-    counter++;
+    list <Profile> profile;
+    profile.push_back(Profile(name, lastname, birth, password));
+    profileVector.push_back(profile);
 }
 
 int Social::login(string name, string password)
 {
 
-    for (int x = 0; x<10; x++)
-    {
-        if (name == profile[x].front().getFirstName() && password == profile[x].front().getPassword())
-        {
-            curIndex = profile[x].front().getIndex();
-            return profile[x].front().getIndex();
-        }
-    }
-    return -1;
 }
 
 int Social::accountExist(string name, string lastname)
 {
-    for (int x = 0; x<10; x++)
-    {
-        if (name == profile[x].front().getFirstName() && lastname == profile[x].front().getLastName())
-        {
-             return profile[x].front().getIndex();
-        }
-    }
-    return 0;
 }
 
 void Social::AddFriend(string name, string lastname, int index)
 {
-    if (accountExist(name, lastname))
-    {
-        profile[index].push_back(Profile(name, lastname));
-        profile[accountExist(name, lastname)].push_back(Profile(profile[index].front().getFirstName(), profile[index].front().getLastName())); //wow hehe :D
-        cout << "\tYou added: " << name << " " << lastname << endl;
-    }
-    else cout << "\tAccount does not exist! " << endl;
+
 }
 
 void Social::showMyFriends(int index)
 {
-    for(it=profile[index].begin(); it!=profile[index].end(); it++)
-    {
-        (*it).getFirstName() != profile[index].front().getFirstName() ?
-        cout << "\t" << (*it).getFirstName() << " " << (*it).getLastName() << endl:
-        cout << "";
-        Sleep(200);
-    }
+
 }
 
+void Social::show()
+{
+
+    x = profileVector.begin();
+
+    (*x).push_back(Profile("joseph", "third"));
+    (*x).push_back(Profile("cool", "third"));
+    (*x).push_back(Profile("dog", "third"));
+
+    it = (*x).begin();
+
+    for (auto& it: (*x))
+    cout << (it).getFirstName();
+
+}
 
 bool Social::isFriend(string name, string lastname, int index)
 {
-    for(it=profile[index].begin(); it!=profile[index].end(); it++)
-    {
-       if((*it).getFirstName() != profile[index].front().getFirstName())
-       {
-            continue;
-       }
-       else if((*it).getFirstName() == name && (*it).getLastName() == lastname)
-       {
-           return true;
-       }
-    }
-    return false;
+
 }
 
 string Social::getName()
 {
-    return profile[curIndex].front().getFirstName();
+
 }
 
 string Social::getLastName()
 {
-    return profile[curIndex].front().getLastName();
 }
 
 

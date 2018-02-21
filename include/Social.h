@@ -13,15 +13,20 @@ using namespace std;
 class Social
 {
 private:
+    vector <list<Profile>> profileVector;
     list <Profile>* profile = new list<Profile>[10];
     list<Profile>::iterator it;
+    vector<list<Profile>>::iterator x;
+
     static int counter;
     static int totalAccounts;
     int curIndex;
 public:
     Social();
-    Social(string name, string lastname, string birth, string password);
     void createAccount(string name, string lastname, string birth, string password);
+    void show();
+
+
     int login(string name, string lastname);
     void AddFriend(string name, string lastname, int index);
     void showMyFriends(int index);

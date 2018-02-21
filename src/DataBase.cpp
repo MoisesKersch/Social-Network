@@ -5,7 +5,6 @@
 #include <winsock.h>
 #include "mysql.h"
 
-
 DataBase::DataBase(string localhost, string user, string password, string database)
 {
     connection = mysql_init(0);
