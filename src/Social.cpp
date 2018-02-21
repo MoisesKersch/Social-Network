@@ -42,7 +42,7 @@ void Social::show()
 
     vi = profileVector.begin();
 
-    *vi.push_back(Profile("joseph", "third"));
+    (*vi).push_back(Profile("joseph", "third"));
     (*vi).push_back(Profile("cool", "third"));
     (*vi).push_back(Profile("dog", "third"));
 

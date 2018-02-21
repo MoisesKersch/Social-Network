@@ -13,8 +13,9 @@ using namespace std;
 class Social
 {
 private:
+    list <Profile>* profile = new list<Profile>[10]; // deprecated
+
     vector <list<Profile>> profileVector;
-    list <Profile>* profile = new list<Profile>[10];
     list<Profile>::iterator li; // list iterrator
     vector<list<Profile>>::iterator vi; // vector iterrator
 
