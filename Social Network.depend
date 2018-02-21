@@ -32,7 +32,7 @@
 	<windows.h>
 	<DataBase.h>
 
-1519199200 c:\users\light\documents\social-network\include\social.h
+1519245948 c:\users\light\documents\social-network\include\social.h
 	<iostream>
 	<list>
 	"Profile.h"
@@ -47,7 +47,7 @@
 	<iostream>
 	"Profile.h"
 
-1519200622 source:c:\users\light\documents\social-network\src\social.cpp
+1519200971 source:c:\users\light\documents\social-network\src\social.cpp
 	<iostream>
 	<stdlib.h>
 	"Profile.h"

@@ -40,16 +40,16 @@ void Social::showMyFriends(int index)
 void Social::show()
 {
 
-    x = profileVector.begin();
+    vi = profileVector.begin();
 
-    (*x).push_back(Profile("joseph", "third"));
-    (*x).push_back(Profile("cool", "third"));
-    (*x).push_back(Profile("dog", "third"));
+    *vi.push_back(Profile("joseph", "third"));
+    (*vi).push_back(Profile("cool", "third"));
+    (*vi).push_back(Profile("dog", "third"));
 
-    it = (*x).begin();
+    li = (*vi).begin();
 
-    for (auto& it: (*x))
-    cout << (it).getFirstName();
+    for (auto& li: (*vi))
+    cout << (li).getFirstName();
 
 }
 

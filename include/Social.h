@@ -15,8 +15,8 @@ class Social
 private:
     vector <list<Profile>> profileVector;
     list <Profile>* profile = new list<Profile>[10];
-    list<Profile>::iterator it;
-    vector<list<Profile>>::iterator x;
+    list<Profile>::iterator li; // list iterrator
+    vector<list<Profile>>::iterator vi; // vector iterrator
 
     static int counter;
     static int totalAccounts;
