@@ -136,11 +136,31 @@ int main()
 //
 //    social.showAllAccounts();
 
+<<<<<<< HEAD
      Social social;
 
      social.createAccount("orthonn", "Tarzan", "boy", "10-10-1000", "orthonn123");
      social.createAccount("orthonn", "Joseph", "boy", "10-10-1000", "orthonn123");
      social.isUniqueUserName("orthonn");
+=======
+    Social social;
+
+    for(int x = 0; x<10; x++)
+        social.createAccount(name[x], lastname[x], "0000", "root");
+
+
+        // master will add airton, rodrigo.
+
+    for(int x = 2; x<4; x++)
+        social.AddFriend(name[x], lastname[x], 0);
+
+
+    social.showMyFriends(0);
+    
+    
+    
+    
+>>>>>>> 6f03483b9b6ea67133384881a36fd21d9c1cc52c
 
 
 }

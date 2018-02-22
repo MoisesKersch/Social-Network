@@ -15,8 +15,12 @@ Social::Social(){}
 
 void Social::createAccount(string username, string name, string lastname, string birth, string password)
 {
+<<<<<<< HEAD
     list<Profile>profile;
     profile.push_back(Profile(username, name, lastname, birth, password));
+=======
+    profile.push_back(Profile(name, lastname, birth, password));
+>>>>>>> 6f03483b9b6ea67133384881a36fd21d9c1cc52c
     profileVector.push_back(profile);
 }
 
@@ -68,6 +72,7 @@ void Social::AddFriend(string name, string lastname, int index)
 
 void Social::showMyFriends(int index)
 {
+<<<<<<< HEAD
     vi = profileVector.begin(); // vi turns into the list class "profile" from vector class "profileVector"
     advance(vi, index);
 
@@ -84,6 +89,29 @@ void Social::showAllAccounts()
 {
      for (auto& vi: profileVector)
         cout << (vi).front().getFirstName() << endl;
+=======
+    vi = profileVector.begin();
+
+    advance(vi, index);
+
+    li = (*vi).begin();
+
+    advance(li, 1);
+
+    cout << (*li).getFirstName();
+
+    int x = 0;
+    for (auto& li: (*vi))
+    {
+         cout << (li).getFirstName() << " " << x << endl;
+         x++;
+    }
+
+>>>>>>> 6f03483b9b6ea67133384881a36fd21d9c1cc52c
+}
+
+void Social::show()
+{
 }
 
 bool Social::isFriend(string name, string lastname, int index)
@@ -108,5 +136,8 @@ string Social::getLastName()
 
 
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 6f03483b9b6ea67133384881a36fd21d9c1cc52c
