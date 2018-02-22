@@ -6,8 +6,9 @@ using namespace std;
 int Profile:: id = 0;
 
 // creating a new account
-Profile::Profile(string firstname, string lastname, string birth, string password)
+Profile::Profile(string username, string firstname, string lastname, string birth, string password)
 {
+  this->username = username;
   this->firstname = firstname;
   this->lastname = lastname;
   this->birth = birth;
@@ -62,4 +63,15 @@ string Profile::getPassword()
 {
     return password;
 }
+
+void Profile::checking(bool input)
+{
+    this->checked = input;
+}
+
+bool Profile::getCheck()
+{
+    return checked;
+}
+
 

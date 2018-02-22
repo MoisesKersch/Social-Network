@@ -12,15 +12,19 @@ private:
   string lastname;
   string birth;
   string password;
+  string username;
+  bool checked;
   static int id;
   int index;
 public:
-  Profile(string firstname, string lastname, string birth, string password);
+  Profile(string username, string firstname, string lastname, string birth, string password);
   Profile(string name, string lastname);
   void setFirstName(string firstname);
   void setLastName(string lastname);
   void setBirth(string birth);
   void getFriends();
+  void checking(bool input);
+  bool getCheck();
 
 
   string getFirstName();

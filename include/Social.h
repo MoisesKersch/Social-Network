@@ -13,9 +13,8 @@ using namespace std;
 class Social
 {
 private:
-    list <Profile>* profile = new list<Profile>[10]; // deprecated
-
     vector <list<Profile>> profileVector;
+
     list<Profile>::iterator li; // list iterrator
     vector<list<Profile>>::iterator vi; // vector iterrator
 
@@ -24,15 +23,16 @@ private:
     int curIndex;
 public:
     Social();
-    void createAccount(string name, string lastname, string birth, string password);
-    void show();
-
+    void createAccount(string username, string name, string lastname, string birth, string password);
+    void showAllAccounts();
 
     int login(string name, string lastname);
+    bool isUniqueUserName(string username);
     void AddFriend(string name, string lastname, int index);
     void showMyFriends(int index);
     int accountExist(string name, string lastname);
     bool isFriend(string name, string lastname, int index);
+
     string getName();
     string getLastName();
 };
