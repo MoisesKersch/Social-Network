@@ -25,14 +25,14 @@
 	"Social.h"
 	<windows.h>
 
-1519284302 source:c:\users\light\documents\social-network\main.cpp
+1519446228 source:c:\users\light\documents\social-network\main.cpp
 	<iostream>
 	<list>
 	"Social.h"
 	<windows.h>
 	<DataBase.h>
 
-1519284727 c:\users\light\documents\social-network\include\social.h
+1519446480 c:\users\light\documents\social-network\include\social.h
 	<iostream>
 	<list>
 	"Profile.h"
@@ -40,20 +40,21 @@
 	<algorithm>
 	"windows.h"
 
-1519284960 c:\users\light\documents\social-network\include\profile.h
+1519445424 c:\users\light\documents\social-network\include\profile.h
 	<iostream>
 
-1519284960 source:c:\users\light\documents\social-network\src\profile.cpp
+1519444647 source:c:\users\light\documents\social-network\src\profile.cpp
 	<iostream>
 	"Profile.h"
 
-1519286020 source:c:\users\light\documents\social-network\src\social.cpp
+1519446654 source:c:\users\light\documents\social-network\src\social.cpp
 	<iostream>
 	<stack>
 	<stdlib.h>
 	"Profile.h"
 	"Social.h"
 	<algorithm>
+	<typeinfo>
 
 1517246962 c:\users\light\documents\social-network\include\database.h
 	<iostream>

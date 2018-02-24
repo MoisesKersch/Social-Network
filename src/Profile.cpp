@@ -18,10 +18,9 @@ Profile::Profile(string username, string firstname, string lastname, string birt
 }
 
 // adding a new friend
-Profile::Profile(string name, string lastname)
+Profile::Profile(string username)
 {
-    this->firstname = name;
-    this->lastname = lastname;
+    this->username = username;
 }
 
 void Profile::setFirstName(string firstname)
@@ -73,5 +72,13 @@ bool Profile::getCheck()
 {
     return checked;
 }
+
+string Profile::getUserName()
+{
+    return this->username;
+}
+
+
+
 
 

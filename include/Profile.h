@@ -18,19 +18,20 @@ private:
   int index;
 public:
   Profile(string username, string firstname, string lastname, string birth, string password);
-  Profile(string name, string lastname);
+  Profile(string username);
+
   void setFirstName(string firstname);
   void setLastName(string lastname);
   void setBirth(string birth);
   void getFriends();
   void checking(bool input);
-  bool getCheck();
 
-
+  string getUserName();
   string getFirstName();
   string getLastName();
   string getBirth();
   string getPassword();
   int getIndex();
+  bool getCheck();
 };
 #endif // PROFILE_H

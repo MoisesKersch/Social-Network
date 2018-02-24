@@ -20,18 +20,22 @@ private:
 
     static int counter;
     static int totalAccounts;
-    int curIndex;
+    int accountid;
+
+    bool accountExist(string username);
+    bool isUniqueUserName(string username);
 public:
     Social();
     void createAccount(string username, string name, string lastname, string birth, string password);
     void showAllAccounts();
 
-    int login(string name, string lastname);
-    bool isUniqueUserName(string username);
-    void AddFriend(string name, string lastname, int index);
-    void showMyFriends(int index);
-    int accountExist(string name, string lastname);
+    void login(string name, string lastname);
+
+    void AddFriend(string username);
+    void showMyFriends();
     bool isFriend(string name, string lastname, int index);
+    bool deleteAfriend(string username);
+    bool deleteAccount();
 
     string getName();
     string getLastName();

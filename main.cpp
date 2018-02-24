@@ -137,11 +137,35 @@ int main()
 //    social.showAllAccounts();
 
      Social social;
+      for(int x = 0; x<10; x++)
+      {
+          social.createAccount(to_string(x), name[x], lastname[x], "00-00-0000", "orthonn123");
+      }
 
-     social.createAccount("orthonn", "Tarzan", "boy", "10-10-1000", "orthonn123");
-     social.createAccount("orthonn", "Joseph", "boy", "10-10-1000", "orthonn123");
-     social.isUniqueUserName("orthonn");
 
+
+
+     social.login("9", "orthonn123");
+
+     social.AddFriend("0");
+     social.AddFriend("4");
+     social.AddFriend("5");
+     social.AddFriend("7");
+
+     social.showMyFriends();
+     cout << endl << endl;
+     social.deleteAfriend("4");
+     social.showMyFriends();
+
+     cout << endl << endl;
+
+     social.showAllAccounts();
+
+     social.deleteAccount();
+
+     cout << endl << endl;
+
+     social.showAllAccounts();
 
 }
 
