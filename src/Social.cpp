@@ -18,7 +18,7 @@ int Social::counter = 0;
 Social::Social(){}
 
 /// server side
-void Social::createAccount(string username, string name, string lastname, string birth, string password)
+bool Social::createAccount(string username, string name, string lastname, string birth, string password)
 {
     list<Profile>profile;
 
@@ -34,8 +34,9 @@ void Social::createAccount(string username, string name, string lastname, string
     }
     else
     {
-        cout << "User name already taken, the account wasn't created!" << endl;
+        return false;
     }
+    return true;
 }
 
 void Social::login(string username, string password)
@@ -79,7 +80,7 @@ bool Social::isUniqueUserName(string username)
 void Social::showAllAccounts()
 {
      for (auto& vi: profileVector)
-        cout << (vi).front().getFirstName() << endl;
+        cout << "User Name: "+(vi).front().getUserName() << "| Account: " << (vi).front().getFirstName() << " " << (vi).front().getLastName() << endl;
 }
 bool Social::accountExist(string username){}
 

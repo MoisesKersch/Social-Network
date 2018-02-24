@@ -2,6 +2,8 @@
 #include <list>
 #include "Social.h"
 #include <windows.h>
+#include <iostream>
+#include <fstream>
 
 #include <DataBase.h> // if you get some error, you can comment this line, it means you're database mysql isn't properly configured in your machine.
 
@@ -137,35 +139,39 @@ int main()
 //    social.showAllAccounts();
 
      Social social;
-      for(int x = 0; x<10; x++)
-      {
-          social.createAccount(to_string(x), name[x], lastname[x], "00-00-0000", "orthonn123");
-      }
+     ifstream file;
+     string firstname, lastname;
 
+     file.open("accounts.txt");
 
+     if(file.is_open())
+     {
+         while (file >> firstname && file >> lastname)
+         {
+            social.createAccount(firstname, firstname, lastname, "1000-10-10", "root");
+         }
+     }
+     file.close();
 
+     social.createAccount("orthonn", "Moises", "Kerschner", "1000-10-10", "orthonn123");
 
-     social.login("9", "orthonn123");
+     social.login("orthonn", "orthonn123");
 
-     social.AddFriend("0");
-     social.AddFriend("4");
-     social.AddFriend("5");
-     social.AddFriend("7");
+     file.open("accounts.txt");
+     if(file.is_open())
+     {
+         while (file >> firstname && file >> lastname)
+         {
+            social.AddFriend(firstname);
+         }
+     }
+     file.close();
 
      social.showMyFriends();
-     cout << endl << endl;
-     social.deleteAfriend("4");
-     social.showMyFriends();
 
-     cout << endl << endl;
 
-     social.showAllAccounts();
 
-     social.deleteAccount();
 
-     cout << endl << endl;
-
-     social.showAllAccounts();
 
 }
 

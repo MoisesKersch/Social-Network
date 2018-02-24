@@ -26,7 +26,7 @@ private:
     bool isUniqueUserName(string username);
 public:
     Social();
-    void createAccount(string username, string name, string lastname, string birth, string password);
+    bool createAccount(string username, string name, string lastname, string birth, string password);
     void showAllAccounts();
 
     void login(string name, string lastname);
