@@ -1,0 +1,8 @@
+create table if not exists person (
+id int not null auto_increment, 
+username varchar ( 50 ) not null unique default '', 
+name varchar ( 50 ) not null default '',
+lastname varchar ( 50 ) not null default '',
+birthday date, 
+password varchar ( 50 ) not null,
+primary key ( id ) )default charset = utf8;

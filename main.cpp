@@ -16,7 +16,7 @@ string name[] = {"Master", "Rose", "Airto", "Rodrigo", "Martha", "Roberto", "Raf
 string lastname[] = {"Rupperts", "Almeida", "Oliveira", "Matos", "Huff", "Da Silva", "Santos", "Lima", "Del Rey", "Hemmet"};
 
 //Social mysocial;
-//DataBase database("localhost", "root", "", "register");
+DataBase database("localhost", "root", "", "register");
 //
 //void addFriend();
 //
@@ -77,78 +77,22 @@ string lastname[] = {"Rupperts", "Almeida", "Oliveira", "Matos", "Huff", "Da Sil
 
 int main()
 {
-//    createAccount();
-//    loginAccount(name[0], "root");
-//    addFriend();
-//
-//    cout << "\n\t\tDisplaying all your friends!\n" << endl;
-//    mysocial.showMyFriends(mysocial.login(name[0], "root"));
-//    Sleep(2000);
-//
-//    cout << "\n\t\tLet's now check if "+name[8]+" "+lastname[8]+" is your friend..." << endl;
-//    Sleep(2000);
-//    if (mysocial.isFriend(name[8], lastname[8], mysocial.login(name[0], "root")))
-//    {
-//        cout << "\n\tYes you guys are friends!" << endl;
-//    }
-//    else
-//    {
-//        cout << "\n\tNo, you're not friend with "+name[8]+" "+lastname[8]+"!" << endl;
-//    }
-//
-//    Sleep(2000);
-//    cout << "\n\t\tWait! what are you doing? I don't think you'll be capable to enter another person's account...";
-//    Sleep(2000);
-//    loginAccount(name[5], "root");
-//
-//    cout << "\t\tWow, you managed to hack "+mysocial.getName()+"'s account" << endl;
-//    Sleep(2000);
-//    cout << "\t\tWell since you're here, let's explore "+mysocial.getName()+"'s account" << endl;
-//    Sleep(2000);
-//    cout << "\t\tFirst let's take a look at his friends\n" << endl;
-//    Sleep(2000);
-//    mysocial.showMyFriends(mysocial.login(name[5], "root"));
-//    cout << "\n\t\tMmm.. the only friend he's got is you" << endl;
-//    Sleep(3000);
-//    cout << "\n\t\tLet's add a few friends to this profile...." << endl;
-//    Sleep(3000);
-//    for (int x=6; x<10; x++)
-//    {
-//       mysocial.AddFriend(name[x], lastname[x], mysocial.login(name[5], "root"));
-//    }
-//
-//    cout << "\n\t\tLet's see "+mysocial.getName()+"'s new friends..." << endl;
-//    mysocial.showMyFriends(mysocial.login(name[5], "root"));
-//    Sleep(3000);
-//
-//
-//
-//
-//    for(int x = 0; x<10; x++)
-//        social.createAccount(name[x], lastname[x], "0000", "root");
-//
-//
-//        // master will add airton, rodrigo.
-//
-//    for(int x = 1; x<100000; x++)
-//        social.AddFriend(to_string(x), to_string(x), 0);
-//
-//
-//    social.showMyFriends(1);
-//
-//    social.showAllAccounts();
-
      Social social;
      ifstream file;
      string firstname, lastname;
 
-     file.open("accounts.txt");
+     file.open("./files/accounts.txt");
+
+     if (file.is_open())
+        cout << "hi" << endl;
+
 
      if(file.is_open())
      {
          while (file >> firstname && file >> lastname)
          {
             social.createAccount(firstname, firstname, lastname, "1000-10-10", "root");
+            database.insertInto(firstname, firstname, lastname, "1000-10-10", "root");
          }
      }
      file.close();
@@ -157,7 +101,7 @@ int main()
 
      social.login("orthonn", "orthonn123");
 
-     file.open("accounts.txt");
+     file.open("./files/accounts.txt");
      if(file.is_open())
      {
          while (file >> firstname && file >> lastname)

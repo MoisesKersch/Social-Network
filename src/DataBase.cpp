@@ -5,30 +5,64 @@
 #include <winsock.h>
 #include "mysql.h"
 
+
 DataBase::DataBase(string localhost, string user, string password, string database)
 {
-    connection = mysql_init(0);
-    connection = mysql_real_connect(connection, localhost.c_str(), user.c_str(), password.c_str(), database.c_str(), 0, NULL, 0);
-    if (connection)
-    {
-        cout << "Connected to database ("+database+")!" << endl;
-    }
-    else
-    {
-        cout << "Sorry, no connection!" << endl;
-    }
+  connection = mysql_init(NULL);
+
+  if (connection == NULL)
+  {
+      //fprintf(stderr, "%s\n", mysql_error(connection));
+      exit(1);
+  }
+
+  if (mysql_real_connect(connection, localhost.c_str(), user.c_str(), password.c_str(), NULL, 0, NULL, 0) == NULL)
+  {
+      //fprintf(stderr, "%s\n", mysql_error(connection));
+      mysql_close(connection);
+      exit(1);
+  }
+  createScheme(database);
 }
 
-void DataBase::insertInto(string name, string lastname, string birth, string password)
+void DataBase::createScheme(string database)
 {
-    query = "insert into person (name, lastname, birth, password) value ('"+name+"', '"+lastname+"', '"+birth+"', '"+password+"');";
+      query = "Create database if not exists "+database+" default character set utf8 default collate utf8_general_ci;";
+      if (mysql_query(connection, query.c_str()))
+      {
+          fprintf(stderr, "%s\n", mysql_error(connection));
+          mysql_close(connection);
+          exit(1);
+      }
+
+      query = "use "+database;
+
+      if (mysql_query(connection, query.c_str()))
+      {
+          fprintf(stderr, "%s\n", mysql_error(connection));
+          mysql_close(connection);
+          exit(1);
+      }
+
+      if (mysql_query(connection, getFiles().c_str()))
+      {
+          fprintf(stderr, "%s\n", mysql_error(connection));
+          mysql_close(connection);
+          exit(1);
+      }
+}
+
+void DataBase::insertInto(string username, string name, string lastname, string birth, string password)
+{
+    query = "insert into person (username, name, lastname, birthday, password) value ('"+username+"', '"+name+"', '"+lastname+"', '"+birth+"', '"+password+"');";
+
     if (connection != 0 && !(querystate = mysql_query(connection, query.c_str())))
     {
-        cout << "\t\tData saved successfully into database!!" << endl;
+        cout << "\t\tData saved successfully!!" << endl;
     }
     else
     {
-        cout << "\t\tSorry, your data could not be saved into database!" << endl;
+        cout << "\t\tSorry, your data could not be saved!" << endl;
     }
 }
 
@@ -67,6 +101,22 @@ void DataBase::displayAllRecords()
         }
 }
 
+string DataBase::getFiles()
+{
+     file.open("./files/databaseTable.txt");
+
+     string tempt;
+     query = " ";
+     if(file.is_open())
+     {
+         while (file >> tempt)
+         {
+            query+= " "+tempt;
+         }
+     }
+     file.close();
+     return query;
+}
 
 
 

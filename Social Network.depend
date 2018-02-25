@@ -25,7 +25,7 @@
 	"Social.h"
 	<windows.h>
 
-1519449321 source:c:\users\light\documents\social-network\main.cpp
+1519520335 source:c:\users\light\documents\social-network\main.cpp
 	<iostream>
 	<list>
 	"Social.h"
@@ -58,10 +58,12 @@
 	<algorithm>
 	<typeinfo>
 
-1517246962 c:\users\light\documents\social-network\include\database.h
+1519515592 c:\users\light\documents\social-network\include\database.h
 	<iostream>
 	<winsock.h>
 	<mysql.h>
+	<iostream>
+	<fstream>
 
 1516265361 c:\users\light\documents\social-network\include\mysql.h
 	<sys/types.h>
@@ -87,7 +89,7 @@
 
 1476124177 c:\users\light\documents\social-network\include\my_alloc.h
 
-1519195155 source:c:\users\light\documents\social-network\src\database.cpp
+1519518976 source:c:\users\light\documents\social-network\src\database.cpp
 	"DataBase.h"
 	<iostream>
 	<winsock.h>
