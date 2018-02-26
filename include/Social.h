@@ -21,6 +21,7 @@ private:
     static int counter;
     static int totalAccounts;
     int accountid;
+    bool logged;
 
     bool accountExist(string username);
     bool isUniqueUserName(string username);
@@ -33,7 +34,7 @@ public:
 
     void AddFriend(string username);
     void showMyFriends();
-    bool isFriend(string name, string lastname, int index);
+    bool isFriend(string username);
     bool deleteAfriend(string username);
     bool deleteAccount();
 

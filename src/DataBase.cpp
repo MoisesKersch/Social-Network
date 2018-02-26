@@ -93,7 +93,7 @@ void DataBase::displayAllRecords()
             {
                 check = true;
                 cout << "\n";
-                cout << "Name: " << row[0] << " " << row[2] << endl;
+                cout << "Name: " << row[2] << " " << row[3] << endl;
                 cout << "Birthday : " << row[4] << endl;
             }
             if (!check)

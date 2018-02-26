@@ -12,11 +12,8 @@
 
 using namespace std;
 
-string name[] = {"Master", "Rose", "Airto", "Rodrigo", "Martha", "Roberto", "Rafael", "Ana", "Lana", "Kirk"};
-string lastname[] = {"Rupperts", "Almeida", "Oliveira", "Matos", "Huff", "Da Silva", "Santos", "Lima", "Del Rey", "Hemmet"};
-
 //Social mysocial;
-DataBase database("localhost", "root", "", "register");
+
 //
 //void addFriend();
 //
@@ -77,41 +74,20 @@ DataBase database("localhost", "root", "", "register");
 
 int main()
 {
-     Social social;
-     ifstream file;
-     string firstname, lastname;
+    Social social;
+    ofstream file;
+    string firstname, lastname;
 
-     file.open("./files/accounts.txt");
-
-     if (file.is_open())
-        cout << "hi" << endl;
+    file.open("./files/save.txt", ios::app);
 
 
-     if(file.is_open())
-     {
-         while (file >> firstname && file >> lastname)
-         {
-            social.createAccount(firstname, firstname, lastname, "1000-10-10", "root");
-            database.insertInto(firstname, firstname, lastname, "1000-10-10", "root");
-         }
-     }
-     file.close();
+    file << "Hello world ";
+    file << "I love you";
 
-     social.createAccount("orthonn", "Moises", "Kerschner", "1000-10-10", "orthonn123");
 
-     social.login("orthonn", "orthonn123");
+    social.createAccount("orthonn", "Moises", "Kerschner", "1000-10-10", "orthonn123");
 
-     file.open("./files/accounts.txt");
-     if(file.is_open())
-     {
-         while (file >> firstname && file >> lastname)
-         {
-            social.AddFriend(firstname);
-         }
-     }
-     file.close();
 
-     social.showMyFriends();
 
 
 

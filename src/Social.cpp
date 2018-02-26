@@ -15,7 +15,10 @@ using namespace std;
 
 int Social::counter = 0;
 
-Social::Social(){}
+Social::Social()
+{
+    logged = false;
+}
 
 /// server side
 bool Social::createAccount(string username, string name, string lastname, string birth, string password)
@@ -48,8 +51,9 @@ void Social::login(string username, string password)
     {
          if (((vi).front().getUserName() == username)&& ((vi).front().getPassword() == password))
          {
-            cout << "Login successful!" << endl;
+            cout << "\n\nLogin successful! ";
             found = true;
+            logged = true;
             break;
          }
          x++;
@@ -58,7 +62,7 @@ void Social::login(string username, string password)
     if (found)
     {
         advance(vi, x);
-        cout << vi->front().getFirstName() << endl;
+        cout << "Welcome "+vi->front().getFirstName()+" "+vi->front().getLastName() << endl;
         this->accountid = x;
         return;
     }
@@ -80,7 +84,7 @@ bool Social::isUniqueUserName(string username)
 void Social::showAllAccounts()
 {
      for (auto& vi: profileVector)
-        cout << "User Name: "+(vi).front().getUserName() << "| Account: " << (vi).front().getFirstName() << " " << (vi).front().getLastName() << endl;
+        cout << "User Name: "+(vi).front().getUserName() << " | Account: " << (vi).front().getFirstName() << " " << (vi).front().getLastName() << endl;
 }
 bool Social::accountExist(string username){}
 
@@ -90,7 +94,7 @@ void Social::AddFriend(string username)
      vi = profileVector.begin();
      advance(vi, accountid);
 
-     if(!isUniqueUserName(username))
+     if(!isUniqueUserName(username) and (*vi).front().getUserName() != username and isFriend(username))
      {
          advance(vi, accountid);
          (*vi).push_back(Profile(username));
@@ -98,20 +102,37 @@ void Social::AddFriend(string username)
      }
      else
      {
-         cout << "Account "+username+" doesn't exist!" << endl;
+        if (!isFriend(username))
+            cout << "You already added "+username+"." << endl;
+        else if(isUniqueUserName(username))
+            cout << "Error adding "+username+" account doesn't exists! " << endl;
+        else cout << "Error adding "+username+" you can't add yourself! " << endl;
      }
 }
 
 void Social::showMyFriends()
 {
-    vi = profileVector.begin(); // vi turns into the list class "profile" from vector class "profileVector"
-    advance(vi, accountid);
-    li = (*vi).begin(); // li turns into the Profile class from "profile" list class
-
-    for(int x=0; x <(*vi).size()-1; x++)
+    if (logged == true)
     {
-        advance(li, 1);
-        cout << (*li).getUserName() << endl;
+        vi = profileVector.begin(); // vi turns into the list class "profile" from vector class "profileVector"
+        advance(vi, accountid);
+        li = (*vi).begin(); // li turns into the Profile class from "profile" list class
+
+        int x = 0;
+        for(x; x <(*vi).size()-1; x++)
+        {
+            advance(li, 1);
+            cout << (*li).getUserName() << endl;
+        }
+
+        if (x == 0)
+        {
+            cout << "\nYou don't have any friends";
+        }
+    }
+    else
+    {
+        cout << "Error your not logged in!" << endl;
     }
 }
 
@@ -141,7 +162,20 @@ bool Social::deleteAccount()
    profileVector.erase (profileVector.begin()+accountid);
 }
 
-bool Social::isFriend(string name, string lastname, int index){}
+bool Social::isFriend(string username)
+{
+    vi = profileVector.begin(); // vi turns into the list class "profile" from vector class "profileVector"
+    advance(vi, accountid);
+    li = (*vi).begin(); // li turns into the Profile class from "profile" list class
+
+    for(int x = 0; x <(*vi).size()-1; x++)
+    {
+        advance(li, 1);
+        if ((*li).getUserName() == username)
+            return false;
+    }
+    return true;
+}
 string Social::getName(){}
 string Social::getLastName()
 {
